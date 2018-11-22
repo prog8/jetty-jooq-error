@@ -1,0 +1,26 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+
+compileJava.options.fork = true
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+
+dependencies {
+  providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+  compile group: 'org.jooq', name: 'jooq', version: '3.11.7'
+}
+
